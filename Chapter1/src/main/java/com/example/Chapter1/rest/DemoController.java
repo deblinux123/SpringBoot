@@ -11,12 +11,19 @@ public class DemoController
 {
     private Coach myCoach;
 
+    // constructor injection
+//    @Autowired
+//    public DemoController(Coach myCoach)
+//    {
+//        this.myCoach = myCoach;
+//    }
+
+    // Setter injection
     @Autowired
-    public DemoController(Coach myCoach)
+    public void setMyCoach(Coach myCoach)
     {
         this.myCoach = myCoach;
     }
-
     @GetMapping("/dailyWorkout")
     public String dailyWorkout()
     {
