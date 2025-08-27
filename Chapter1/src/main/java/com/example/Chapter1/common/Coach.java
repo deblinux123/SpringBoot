@@ -1,4 +1,4 @@
-package com.example.Chapter1;
+package com.example.Chapter1.common;
 
 public interface Coach
 {
