@@ -6,12 +6,5 @@ public interface Coach
 {
     public String getDailyWorkout();
 
-    @Component
-    class CricketCoach implements Coach
-    {
-        @Override
-        public String getDailyWorkout() {
-            return "Practice fast 15 min";
-        }
-    }
+
 }
