@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class CricketCoach implements Coach {
         @Override
         public String getDailyWorkout() {
+            System.out.println("In Constructor: " + getClass().getSimpleName());
             return "Practice fast 15 min";
         }
 
