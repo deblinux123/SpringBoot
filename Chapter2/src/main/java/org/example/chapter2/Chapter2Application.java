@@ -22,13 +22,13 @@ public class Chapter2Application {
     {
         return runner ->
         {
-//            createUser(userDao);
+            createUser(userDao);
 //            readUsers(userDao);
 //            queryForUsers(userDao);
 //            queryForUsersByUsername(userDao);
 //            updateUses(userDao);
 //            deleteUser(userDao);
-            deleteAll(userDao);
+//            deleteAll(userDao);
         };
     }
 
