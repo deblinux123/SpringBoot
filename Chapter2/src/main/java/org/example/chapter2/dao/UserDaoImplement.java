@@ -56,4 +56,11 @@ public class UserDaoImplement implements UserDao
         // return the result
         return query.getResultList();
     }
+
+    @Override
+    @Transactional
+    public void update(User user)
+    {
+        entityManager.merge(user);
+    }
 }

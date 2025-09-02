@@ -25,8 +25,27 @@ public class Chapter2Application {
 //            createUser(userDao);
 //            readUsers(userDao);
 //            queryForUsers(userDao);
-            queryForUsersByUsername(userDao);
+//            queryForUsersByUsername(userDao);
+            updateUses(userDao);
         };
+    }
+
+    private void updateUses(UserDaoImplement userDao)
+    {
+        // retrieve the user based on id
+        int userId = 3;
+        System.out.println("Getting user with id: " + userId);
+        User user = userDao.findById(userId);
+
+        // change the username
+        System.out.println("Updating user ...");
+        user.setUsername("My New USER NAME");
+
+       // update the student
+        userDao.update(user);
+
+        // display the result
+        System.out.println("User with id: " + userId + " and new username \"" + user.getUsername() + "\" updated");
     }
 
     private void queryForUsersByUsername(UserDaoImplement userDao)
