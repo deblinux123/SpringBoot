@@ -26,8 +26,25 @@ public class Chapter2Application {
 //            readUsers(userDao);
 //            queryForUsers(userDao);
 //            queryForUsersByUsername(userDao);
-            updateUses(userDao);
+//            updateUses(userDao);
+//            deleteUser(userDao);
+            deleteAll(userDao);
         };
+    }
+
+    private void deleteAll(UserDaoImplement userDao)
+    {
+        System.out.println("Deleting all users...");
+        int numRows = userDao.deleteAllUsers();
+        System.out.println("Deleted " + numRows + " users.");
+    }
+
+    private void deleteUser(UserDaoImplement userDao)
+    {
+        int userId = 2;
+        System.out.println("Deleting user with id " + userId);
+        userDao.deleteById(userId);
+        System.out.println("Done.");
     }
 
     private void updateUses(UserDaoImplement userDao)

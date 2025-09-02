@@ -63,4 +63,23 @@ public class UserDaoImplement implements UserDao
     {
         entityManager.merge(user);
     }
+
+    @Override
+    @Transactional
+    public void deleteById(Integer id) {
+        // retrieve the user
+        User user = entityManager.find(User.class, id);
+
+        // delete the user
+        entityManager.remove(user);
+
+    }
+
+    @Override
+    @Transactional
+    public int deleteAllUsers() {
+        // find all the users
+        int numRowsDeleted = entityManager.createQuery("DELETE FROM User").executeUpdate();
+        return numRowsDeleted;
+    }
 }
