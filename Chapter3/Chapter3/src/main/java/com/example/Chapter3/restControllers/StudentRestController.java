@@ -4,6 +4,7 @@ package com.example.Chapter3.restControllers;
 import com.example.Chapter3.entity.Students;
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,5 +32,10 @@ public class StudentRestController
         return students;
     }
 
+    @GetMapping("students/{studentsId}")
+    public Students getStudent(@PathVariable int studentsId)
+    {
+        return students.get(studentsId);
+    }
 
 }
