@@ -1,7 +1,6 @@
 package com.example.EmployeeDemoProject.entity;
 
 import com.example.EmployeeDemoProject.dao.EmployeeDao;
-import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +29,24 @@ public class EmployeeDaoJpaImplementation implements EmployeeDao
 
         // return the result
         return employees;
+    }
+
+    @Override
+    public Employee findById(int id) {
+
+        return entityManager.find(Employee.class, id);
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        return entityManager.merge(employee);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        // find the employee
+        Employee findEmployee = entityManager.find(Employee.class, id);
+        // remove the employe that wee find by there id
+        entityManager.remove(findEmployee);
     }
 }

@@ -1,14 +1,12 @@
 package com.example.EmployeeDemoProject.rest;
 
 
-import com.example.EmployeeDemoProject.dao.EmployeeDao;
+
 import com.example.EmployeeDemoProject.entity.Employee;
 import com.example.EmployeeDemoProject.service.EmployeeService;
-import com.example.EmployeeDemoProject.service.EmployeeServiceImpelementation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -26,5 +24,29 @@ public class EmployeeRestController
     public List<Employee> findAll()
     {
         return employeeService.findAll();
+    }
+
+    @GetMapping("/employees/{employeeId}")
+    public Employee findById(@PathVariable int employeeId)
+    {
+        if (employeeService.findById(employeeId) == null)
+        {
+            throw new RuntimeException("Employee with id: " + employeeId + " not found");
+        }
+
+        return employeeService.findById(employeeId);
+    }
+
+    @PostMapping("/employees")
+    public Employee save(@RequestBody Employee employee)
+    {
+        employee.setId(null);
+        return employeeService.save(employee);
+    }
+
+    @PutMapping("/employees")
+    public Employee update(@RequestBody Employee employee)
+    {
+        return employeeService.save(employee);
     }
 }
