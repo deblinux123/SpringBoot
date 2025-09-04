@@ -56,6 +56,21 @@ public class EmployeeRestController
         return employeeService.save(employee);
     }
 
+    @DeleteMapping("/employees/{employeesId}")
+    public String deleteEmployee(@PathVariable int employeesId)
+    {
+        Employee employee = employeeService.findById(employeesId);
+
+        if (employee == null)
+        {
+            throw new RuntimeException("Employee with id: " + employeesId + " not found");
+        }
+
+        employeeService.deleteById(employeesId);
+
+        return "Deleted Employee with id: " + employeesId;
+    }
+
     @PatchMapping("/employees/{employeesId}")
     public Employee patchUpdate(@PathVariable int employeesId, @RequestBody Map<String, Object> patchPayload)
     {
