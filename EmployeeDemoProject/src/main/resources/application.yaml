@@ -19,6 +19,11 @@ spring:
     rest:
       base-path: "/api"
       default-page-size: 20
+  security:
+    user:
+      name: farid
+      password: Admin123
+
 
 server:
   port: 8080
