@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: EmployeeDB
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/SecurityTesting?useSSL=false&serverTimezone=UTC
+    username: root
+    password: f1309D1309@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    rest:
+      base-path: "/api"
+      default-page-size: 20
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /my-ui.html
+  api-docs:
+    path: /my-api-docs
+
+logging:
+  level.org.springframework:
+      security : DEBUG
