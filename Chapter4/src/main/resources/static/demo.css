@@ -8,7 +8,8 @@ p {
     color: darkblue;
 }
 
-#name
+#name,
+#newMessage
 {
     font-size: 20px;
     color: red;
