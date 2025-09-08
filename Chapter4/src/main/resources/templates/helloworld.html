@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/demo.css}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello From Thymeleaf</h1>
+    <p th:text="'Time one the server is ' + ${theDate}"></p>
+</body>
+</html>
