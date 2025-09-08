@@ -1,16 +1,15 @@
 h1{
     font-size: 50px;
     font-style: italic;
+    color: cadetblue;
 }
 
-p {
-    font-style: italic;
-    color: darkblue;
-}
-
-#name,
-#newMessage
+b
 {
-    font-size: 25px;
     color: red;
+}
+span
+{
+    font-size: large;
+    color: darkblue;
 }

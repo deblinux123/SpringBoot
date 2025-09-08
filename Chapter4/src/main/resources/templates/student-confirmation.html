@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Confirmation</title>
+    <link rel="stylesheet" th:href="@{demo.css}">
+</head>
+<body>
+    <h1>Hello From Thymeleaf</h1>
+    <h2>Student Is Confirmed
+        <b>First Name: </b>
+        <span th:text="${student.firstName}"></span>
+        And <b>Last Name: </b>
+        <span th:text="${student.lastName}"></span>
+    </h2>
+
+    <h2>Country <span th:text="${student.getCountry()}"></span></h2>
+
+</body>
+</html>
