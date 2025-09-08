@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Input Form</title>
+    <link rel="stylesheet" th:href="@{demo.css}">
 </head>
 <body>
-
+<h1>Hello From Thymeleaf</h1>
+<form th:action="@{/proccessForm}" method="GET">
+    <input type="text" name="studentName" placeholder="What is your name?">
+    <input type="submit">
+</form>
 </body>
 </html>
