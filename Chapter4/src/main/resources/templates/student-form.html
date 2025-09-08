@@ -9,24 +9,30 @@
 <body>
     <h1>Hello From Thymeleaf</h1>
     <h3>Student Registration Form</h3>
-    <form th:action="@{/proccessStudentForm}" th:object="${student}" method="POST">
+    <form
+            th:action="@{/proccessStudentForm}"
+            th:object="${student}" method="POST">
         <label>FirstName</label>
-        <input type="text" th:field="*{firstName}" placeholder="First Name">
+        <input type="text"
+               th:field="*{firstName}"
+               placeholder="First Name">
 
         <br><br>
 
         <label>Last Name</label>
-        <input type="text" th:field="*{lastName}" placeholder="Last Name">
+        <input type="text"
+               th:field="*{lastName}"
+               placeholder="Last Name">
 
         <br><br>
 
         <label>Country</label>
-        <select th:field="*{country}">
-            <option th:value="Brazil">Brazil</option>
-            <option th:value="France">France</option>
-            <option th:value="India">India</option>
-            <option th:value="Iran">Iran</option>
-            <option th:value="Germany">Germany</option>
+        <select
+                th:field="*{country}">
+            <option
+                    th:each="tempCountry: ${countries}"
+                    th:value="${tempCountry}"
+                    th:text="${tempCountry}">
         </select>
         <br><br>
 
