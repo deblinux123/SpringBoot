@@ -20,6 +20,9 @@ public class StudentController
     @Value("${languages}")
     private List<String> languages;
 
+    @Value("${operationSystem}")
+    private List<String> operationSystems;
+
     @GetMapping("/studentForm")
     public String studentForm(Model model)
     {
@@ -28,6 +31,7 @@ public class StudentController
         model.addAttribute("student", student);
         model.addAttribute("countries", countries);
         model.addAttribute("languages", languages);
+        model.addAttribute("operationSystem",operationSystems);
 
         return "student-form";
     }
@@ -42,7 +46,10 @@ public class StudentController
                 " Country " +
                 student.getCountry() +
                 " Favorite Programming Language " +
-                student.getFavoriteLanguage());
+                student.getFavoriteLanguage() +
+                " Favorite Operating System " +
+                student.getFavoriteOperatingSystem()
+                );
         return "student-confirmation";
     }
 

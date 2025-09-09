@@ -37,10 +37,19 @@
         <br><br>
 
         <label>Favorite Programming language</label>
-        <input type="radio" th:field="*{favoriteLanguage}"
-                            th:each="tempLange : ${languages}"
-                            th:value="${tempLange}"
-                            th:text="${tempLange}">
+        <input type="radio"
+               th:field="*{favoriteLanguage}"
+               th:each="tempLange : ${languages}"
+               th:value="${tempLange}"
+               th:text="${tempLange}">
+        <br><br>
+
+        <label>Favorite Operation System: </label>
+        <input type="checkbox"
+               th:field="*{favoriteOperatingSystem}"
+               th:each="tempOperation : ${operationSystem}"
+               th:value="${tempOperation}"
+               th:text="${tempOperation}">
         <br><br>
 
         <input type="submit">

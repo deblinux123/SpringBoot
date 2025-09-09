@@ -15,8 +15,12 @@
         <span th:text="${student.lastName}"></span>
     </h2>
 
-    <h2>Country: <span th:text="${student.getCountry()}"></span></h2>
-    <h2>Favorite Programming Language: <span th:text="${student.getFavoriteLanguage()}"></span></h2>
-
+    <h2>Country: <span th:text="${student.country}"></span></h2>
+    <h2>Favorite Programming Language: <span th:text="${student.favoriteLanguage}"></span></h2>
+    <h2>Favorite Operation System:</h2>
+    <ul>
+        <li th:each="tempSystem : ${student.favoriteOperatingSystem}"
+            th:text="${tempSystem}">
+    </ul>
 </body>
 </html>
