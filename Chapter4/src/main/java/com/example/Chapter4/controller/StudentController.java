@@ -36,7 +36,9 @@ public class StudentController
                 " " +
                 student.getLastName() +
                 " Country " +
-                student.getCountry());
+                student.getCountry() +
+                " Favorite Programming Language " +
+                student.getFavoriteLanguage());
         return "student-confirmation";
     }
 
