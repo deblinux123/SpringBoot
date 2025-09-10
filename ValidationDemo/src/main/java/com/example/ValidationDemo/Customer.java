@@ -1,6 +1,7 @@
 package com.example.ValidationDemo;
 
 
+import com.example.ValidationDemo.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer
@@ -20,6 +21,10 @@ public class Customer
     private String postalCode;
 
 
+    @CourseCode()
+    private String courseCode;
+
+
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
 
@@ -31,4 +36,8 @@ public class Customer
 
     public String getPostalCode() { return postalCode; }
     public void setPostalCode(String postalCode) { this.postalCode = postalCode; }
+
+    public String getCourseCode() { return courseCode; }
+    public void setCourseCode(String courseCode) { this.courseCode = courseCode; }
+
 }
