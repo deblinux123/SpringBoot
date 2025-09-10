@@ -9,11 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class EmployeeServiceImplementation implements EmployeeService
 {
     private Employeerepository employeeRepo;
 
 
+    @Autowired
     public EmployeeServiceImplementation(Employeerepository employeeRepo)
     {
         this.employeeRepo = employeeRepo;
