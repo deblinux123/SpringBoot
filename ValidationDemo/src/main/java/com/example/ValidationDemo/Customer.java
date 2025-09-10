@@ -21,7 +21,7 @@ public class Customer
     private String postalCode;
 
 
-    @CourseCode()
+    @CourseCode
     private String courseCode;
 
 

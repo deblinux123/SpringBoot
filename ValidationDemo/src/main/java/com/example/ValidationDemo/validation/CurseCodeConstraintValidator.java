@@ -16,8 +16,13 @@ public class CurseCodeConstraintValidator implements ConstraintValidator<CourseC
     @Override
     public boolean isValid(String theCode, ConstraintValidatorContext thConstraintValidatorContext) {
 
-        boolean result = theCode.startsWith(coursePrefix);
+        boolean result;
 
-        return false;
+        if (theCode != null)
+            result = theCode.startsWith(coursePrefix);
+        else
+            return result = true;
+
+        return result;
     }
 }
