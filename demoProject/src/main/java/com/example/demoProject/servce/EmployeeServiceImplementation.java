@@ -1,7 +1,7 @@
 package com.example.demoProject.servce;
 
 
-import com.example.demoProject.dao.Employeerepository;
+import com.example.demoProject.dao.EmployeeRepository;
 import com.example.demoProject.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,18 +13,18 @@ import java.util.Optional;
 @Service
 public class EmployeeServiceImplementation implements EmployeeService
 {
-    private Employeerepository employeeRepo;
+    private EmployeeRepository employeeRepo;
 
 
     @Autowired
-    public EmployeeServiceImplementation(Employeerepository employeeRepo)
+    public EmployeeServiceImplementation(EmployeeRepository employeeRepo)
     {
         this.employeeRepo = employeeRepo;
     }
 
     @Override
     public List<Employee> findAll() {
-        return employeeRepo.findAll();
+        return employeeRepo.findAllByOrderByLastNameAsc();
     }
 
     @Override
