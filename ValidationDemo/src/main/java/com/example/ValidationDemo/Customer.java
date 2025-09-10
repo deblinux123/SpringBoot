@@ -13,7 +13,8 @@ public class Customer
 
     @Min(value= 0, message = "must be greater tha or equal to zero")
     @Max(value = 10, message = "must be less than or equal to 10")
-    private int freePasses;
+    @NotNull(message = "Is required")
+    private Integer freePasses;
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 char/digits")
     private String postalCode;
@@ -25,8 +26,8 @@ public class Customer
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public int getFreePasses() { return freePasses; }
-    public void setFreePasses(int freePasses) { this.freePasses = freePasses; }
+    public Integer getFreePasses() { return freePasses; }
+    public void setFreePasses(Integer freePasses) { this.freePasses = freePasses; }
 
     public String getPostalCode() { return postalCode; }
     public void setPostalCode(String postalCode) { this.postalCode = postalCode; }
